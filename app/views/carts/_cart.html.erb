@@ -1,0 +1,13 @@
+<ul id="cart-list" class="list-group">
+	<% if cart.cart_items.empty? %>
+		<p id="cart-empty"><strong>Cart is empty<strong></p>
+		<% else %>
+  	<%= render(cart.cart_items) %>
+  	<% end %>
+
+    <li class="list-group-item" id="total"><p>Total: <%= number_to_currency(cart.total_price) %></p></li>
+
+</ul>
+<div class="cart-button"><%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%></div>
+<div class="cart-button"><%= button_to 'Empty cart', cart, method: :delete, remote: true,
+    data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %><div>

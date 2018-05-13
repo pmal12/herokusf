@@ -1,0 +1,54 @@
+<div class="container">
+  <div id="flash-messages"><%= flash_messages %></div>
+    <div class="row" id="show-row">
+    	<div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Order with id:<%= @order.id %></strong></div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Name:</strong>
+              <%= @order.name %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Address:</strong>
+              <%= @order.address %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Email:</strong>
+              <%= @order.email %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Pay type:</strong>
+              <%= @order.typeOfPayment %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Phone number:</strong>
+              <%= @order.phone_number %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Ordered items:</strong>
+              <% @order.cart_items.each do |item| %>
+              <ul>
+                <li><%= item.quantity %> <%= item.product.title %></li>
+              </ul>
+              <% end %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Total:</strong>
+              <%= number_to_currency( @order.cart_items.to_a.sum { |item| item.total_price} )%>
+            </li>
+          </ul>
+        </div>
+
+
+        <%= link_to 'Edit', edit_order_path(@order) %> |
+        <%= link_to 'Back', orders_path %>
+      </div>
+    </div>
+</div>

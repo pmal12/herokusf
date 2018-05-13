@@ -1,0 +1,14 @@
+<div id="flash-messages"><%= flash_messages %></div>
+
+<p>
+  <strong>Product:</strong>
+  <%= @cart_item.product %>
+</p>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @cart_item.cart %>
+</p>
+
+<%= link_to 'Edit', edit_cart_item_path(@cart_item) %> |
+<%= link_to 'Back', cart_items_path %>

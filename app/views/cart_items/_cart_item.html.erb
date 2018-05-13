@@ -1,0 +1,9 @@
+
+  <li id="cartitemid" class="list-group-item">
+	  <%= cart_item.product.title %>
+	  <%= number_to_currency(cart_item.total_price) %>
+	  <span class="badge" id="cart_item_badge"><%= cart_item.quantity %></span>
+	  <span class="item-right">
+	    <%= button_to "x", cart_item, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
+	  </span>
+  </li>

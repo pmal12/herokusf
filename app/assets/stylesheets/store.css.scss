@@ -1,0 +1,75 @@
+@import "carousel";
+
+  .flex-container{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .flex-item{
+    color: black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    text-align: center;
+
+    img{
+      width: 220px;
+      height: 150px;
+    }
+   .price{
+    padding-bottom:10px;
+   }
+  }
+
+  #search-row{
+    margin-top: 50px;
+  }
+
+  h3{
+    
+    font-weight: bold;
+    
+    padding-top: 50px;
+    
+  }
+  p{
+    word-break: normal;
+  }
+  #add_button{
+    float: right;
+  }
+#sr-btn{
+  margin-left: 100px;
+}
+@media (min-width: 768px){
+#map{
+  margin-top: 10px;
+   width: 90%;
+}
+}
+
+.nav-pills{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#about{
+  font-size: 15px;
+}
+
+#store-container-about{
+  background: url(store.jpg) no-repeat center center fixed; 
+    background-size: cover;
+  height: 100%;
+}
+
+
+  

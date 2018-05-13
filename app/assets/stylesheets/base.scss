@@ -1,0 +1,59 @@
+body {
+    margin-top: 50px;
+    background: url(bg4.jpg) no-repeat center center fixed; 
+
+    background-size: cover;
+  }
+  
+.row{
+  margin-top: 50px;
+}
+
+#store-container{
+  background: url(store.jpg) no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh;
+}
+
+#store-container-main{
+  background: url(store.jpg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.badge{
+  background-color:grey;
+}
+
+ul .dropdown-menu{
+  width: 20em;
+}
+
+#count{
+  display: inline;
+}
+
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+.navbar-collapse, .navbar-brand{
+  font-weight: bold;
+}
+
+h1{
+  font-weight: bold;
+  font-family: Arial Black;
+  font-size: 50px;
+}
+
+h2{
+  font-weight: bold;
+  font-family: Arial Black;
+  font-size: 40px;
+}

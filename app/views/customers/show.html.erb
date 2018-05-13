@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div id="flash-messages"><%= flash_messages %></div>
+			<div class="panel panel-default">
+			  <div class="panel-heading"><strong>Customer:</strong></div>
+			<ul class="list-group">
+			<li class="list-group-item"
+			  <strong>Name:</strong>
+			  <%= @customer.name %>
+			</li>
+			</ul>
+			</div>
+
+			<%= link_to 'Edit', edit_customer_path(@customer) %> |
+			<%= link_to 'Back', customers_path %>
+			</div>
+	</div>
+</div>
