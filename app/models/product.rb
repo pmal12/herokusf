@@ -1,11 +1,9 @@
 class Product < SalesforceModel
 
-  self.table_name = ENV['HEROKUCONNECT_SF'] + '.product2'
-=begin
-  
-rescue Exception => e
-  
-end
+  self.table_name =  ENV['HEROKUCONNECT_SF'] + '.product2'
+  def self.latest
+    Product.order(:updated_at).last
+  end
   belongs_to :category
   has_many :cart_items
   has_many :orders, through: :cart_items
@@ -36,5 +34,4 @@ end
         return false
       end
     end
-=end    
 end
