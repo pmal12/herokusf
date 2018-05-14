@@ -1,3 +1,3 @@
-class Contact < ApplicationRecord
-	self.table_name = 'salesforce.contact'
+class Contact < SalesforceModel
+	self.table_name =  ENV['HEROKUCONNECT_SCHEMA'] + '.contact'
 end
