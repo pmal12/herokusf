@@ -1,7 +1,11 @@
-class Product < ApplicationRecord
-def self.latest
-    Product.order(:updated_at).last
-  end
+class Product < SalesforceModel
+
+  self.table_name = ENV['HEROKUCONNECT_SF'] + '.product2'
+=begin
+  
+rescue Exception => e
+  
+end
   belongs_to :category
   has_many :cart_items
   has_many :orders, through: :cart_items
@@ -32,4 +36,5 @@ def self.latest
         return false
       end
     end
+=end    
 end
