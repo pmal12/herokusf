@@ -1,3 +1,3 @@
 class Contact < SalesforceModel
-	self.table_name =  ENV['HEROKU_SF'] + '.contact'
+	self.table_name =  ENV['HEROKUCONNECT_SF'] + '.contact'
 end
