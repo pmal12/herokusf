@@ -37,13 +37,13 @@ class StoreController < ApplicationController
 
   # GET /category/:id
   def show
-    @category = Category.find_by_id(params[:category_id])
+    @category = Category.find_by_id(params[:category_id__c])
     @products = @category.products
   end
 
   # GET /product/:id
   def show_prod
-    @product = Product.find_by_id(params[:product_id])
+    @product = Product.find_by_id(params[:id])
 
   end
 
