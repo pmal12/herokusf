@@ -25,7 +25,6 @@ class StoreController < ApplicationController
   before_action :set_prod, only: :index
 
 
-  # GET /
   def index
     @cart = current_cart
     if params[:search]
