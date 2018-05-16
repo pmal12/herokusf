@@ -29,9 +29,9 @@ class StoreController < ApplicationController
   def index
     @cart = current_cart
     if params[:search]
-      @products = @products.search(params[:search]).order("created_at DESC")
+      @products = @products.search(params[:search]).order("createddate DESC")
     else
-      @products = @products.order('created_at DESC')
+      @products = @products.order('createddate DESC')
     end
   end
 
