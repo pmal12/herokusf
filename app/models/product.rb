@@ -1,6 +1,6 @@
 class Product < SalesforceModel
 
-  
+  self.table_name = 'salesforce.product2'
   def self.latest
     Product.order(:updated_at).last
   end
