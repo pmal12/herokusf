@@ -1,4 +1,5 @@
 class Admin < ApplicationRecord
+  #self.table_name = 'salesforce.user'	
   validates :username, presence: true, uniqueness: true
   has_secure_password
   after_destroy :ensure_an_admin_remains

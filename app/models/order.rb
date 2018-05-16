@@ -1,4 +1,6 @@
-class Order < ApplicationRecord
+class Order < SalesforceModel
+
+	#self.table_name = 'salesforce.order'
 	has_many :cart_items, dependent: :destroy
 	PAYMENT_TYPES = ["Check", "Credit card", "Purchase order" ]
 

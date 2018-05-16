@@ -1,4 +1,6 @@
-class Cart < ApplicationRecord
+class Cart < SalesforceModel
+
+  #self.table_name = 'salesforce.cart__c'
   has_many :cart_items, dependent: :destroy
 
   def add_product(product_id)

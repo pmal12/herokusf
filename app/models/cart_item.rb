@@ -1,4 +1,5 @@
-class CartItem < ApplicationRecord
+class CartItem < SalesforceModel
+  #self.table_name = 'salesforce.cart_item__c'
   belongs_to :order
   belongs_to :product
   belongs_to :cart
