@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20180512130755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -93,6 +94,13 @@ ActiveRecord::Schema.define(version: 20180512130755) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

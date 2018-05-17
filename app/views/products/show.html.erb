@@ -8,7 +8,7 @@
 <ul class="list-group">
 <li class="list-group-item">
   <strong>Title:</strong>
-  <%= @product.title %>
+  <%= @product.name %>
 </li>
 
 <li class="list-group-item">
@@ -23,12 +23,12 @@
 
 <li class="list-group-item">
   <strong>Category:</strong>
-  <%= @product.category.name %>
+  <%= @product.category.title__c %>
 </li>
 
 <li class="list-group-item">
   <strong>Price:</strong>
-  <%= number_to_currency(@product.price) %>
+  <%= number_to_currency(@product.price__c) %>
 </li>
 </ul>
 </div>
