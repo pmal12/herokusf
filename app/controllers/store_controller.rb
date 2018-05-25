@@ -47,7 +47,7 @@ class StoreController < ApplicationController
   end
 
   def set_prod
-    @products = Product.order(:name)
+    @products = Product.order(:name__c)
   end
 
   def about

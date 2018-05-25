@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy, :search]
 
+
+  # GET /products
+  # GET /products.json
+
   def index
     @products = Product.all
     if params[:search]
@@ -75,11 +79,11 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image, :price, :category_id)
+      params.require(:product).permit(:name__c, :description, :image, :price__c, :category_id__c)
     end
     def who_bought
       @product = Product.find(params[:id])
-      @latest_order = @product.orders.order(:updated_at).last
+      @latest_order = @product.orders
       if stale?(@latest_order)
         respond_to do |format|
           format.atom

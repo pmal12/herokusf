@@ -1,14 +1,14 @@
-class LineItemsController < ApplicationController
+class CartItemsController < ApplicationController
   skip_before_action :authorize, only: [:create, :destroy]
   include CurrentCart
   before_action :set_cart, only: [:create, :destroy]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
   # GET /line_items.json
 
   def index
-    @line_items = LineItem.all
+    @cart_items = CartItem.all
   end
 
   # GET /line_items/1
@@ -19,7 +19,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/new
   def new
-    @line_item = LineItem.new
+    @cart_item = CartItem.new
   end
 
   # GET /line_items/1/edit
@@ -30,17 +30,17 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @cart_item = @cart.add_product(product.id)
     session[:counter] = 0
     
     respond_to do |format|
-      if @line_item.save
+      if @cart_item.save
         format.html { redirect_to store_url }
-        format.js { @current_item = @line_item }
-        format.json { render action: 'show', status: :created, location: @line_item }
+        format.js { @current_item = @cart_item }
+        format.json { render action: 'show', status: :created, location: @cart_item }
       else
         format.html { render action: 'new' }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,12 +49,12 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+      if @cart_item.update(cart_item_params)
+        format.html { redirect_to @cart_item, notice: 'Cart item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,8 +62,8 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item = LineItem.find(params[:id])
-    @line_item.destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
     respond_to do |format|
       format.html { redirect_to store_url }
       format.js
@@ -75,12 +75,12 @@ class LineItemsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_line_item
-      @line_item = LineItem.find(params[:id])
+    def set_cart_item
+      @cart_item = CartItem.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def line_item_params
-      params.require(:line_item).permit(:product_id)
+    def cart_item_params
+      params.require(:cart_item).permit(:product_id)
     end
 end

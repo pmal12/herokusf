@@ -7,20 +7,14 @@
 		
 		<li class="list-group-item">
 		  <strong>Name:</strong>
-		  <%= @category.name %>
+		  <%= @category.title__c %>
 		</li>
 
 		<li class="list-group-item">
 		  <strong>Description:</strong>
-		  <%= @category.description %>
+		  <%= @category.description__c %>
 		</li>
 
-		<li class="list-group-item">
-			<strong>Associated products:<strong>
-			<% @category.products.each do |product| %>
-			<%= link_to product.title, product %>
-			<% end %>
-		</li>
 		</div>
 
 		<%= link_to 'Edit', edit_category_path(@category) %> |

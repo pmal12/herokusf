@@ -2,11 +2,14 @@ Rails.application.routes.draw do
     resources :categories
   get 'display_cat_prod' => "store#display_cat_prod", as: 'display_cat_prod'
     
-  get 'category/:category_id' => "store#show", as: 'store_category'
+  get 'category/:category_id__c' => "store#show", as: 'store_category'
 
   get 'product/:product_id' => "store#show_prod", as: 'product_show'
 
    get 'store/about'
+   get 'store/case'
+   get 'store/prospect'
+
 
   resources :advertisements
 
