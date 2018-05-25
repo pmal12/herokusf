@@ -10,7 +10,7 @@ class Product < SalesforceModel
   before_destroy :ensure_not_referenced_by_any_cart_item
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }
   
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  #validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 
   validates :name__c, :description, :image, :price__c, presence: true
